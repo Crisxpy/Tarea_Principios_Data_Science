@@ -1,4 +1,10 @@
 # estudiantes.py
+def promedio(estudiante):
+    totalSuma = sum(estudiante["notas"])
+    CantidadNotas = len(estudiante["notas"])
+    promedio = round((totalSuma/CantidadNotas),1)
+    return promedio
+
 estudiantes = [ 
         {"nombre": "Ana" , "notas" : [6.5, 7.0, 5.8]},
         {"nombre": "Luis" , "notas": [4.2 , 5.1, 4.2]},
