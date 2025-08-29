@@ -16,7 +16,7 @@ def main():
 
     for estudiante in DatosEstudiantes.estudiantes:
         promedio = round(sum(estudiante["notas"])/len(estudiante["notas"]),1)
-        promedio = 
+        promedio = DatosEstudiantes.promedio(CantidadNotas["notas"])
         estudiante["promedio"] = promedio
         print(f"El promedio de {estudiante["nombre"]} fue :{promedio}")
         if (notaMax < estudiante["promedio"]):
