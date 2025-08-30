@@ -13,7 +13,6 @@ def main():
     if len(DatosEstudiantes.estudiantes) == 0:return 
 
     for estudiante in DatosEstudiantes.estudiantes:
-        promedio = round(sum(estudiante["notas"])/len(estudiante["notas"]),1)
         promedio = DatosEstudiantes.promedio(estudiante["notas"])
         estudiante["promedio"] = promedio
         print(f"El promedio de {estudiante["nombre"]} fue :{promedio}")

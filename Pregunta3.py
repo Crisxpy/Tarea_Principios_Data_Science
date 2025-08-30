@@ -15,14 +15,18 @@ def main():
 def moda(TodaslasNotas):
     NotasDict = {}
     for nota in TodaslasNotas:
-        if not(nota in NotasDict):            
-            NotasDict[str(nota)] = 1
-        elif(nota in NotasDict):
-            NotasDict[str(nota)] =  NotasDict[str(nota)] + 1
-        print(f"nota: {nota} ; {NotasDict[str(nota)]},{nota in NotasDict}")
-        print(NotasDict)
+        StrNota = str(nota)
+        if not(StrNota in NotasDict):            
+            NotasDict[StrNota] = 1
+        else:
+            NotasDict[StrNota]+=1
+    Moda = 0
+    NotaModa = 0
     for nota in NotasDict:
-        print(f"notas:{ nota } ; {NotasDict[nota]}")
+        if(NotasDict[str(nota)] > Moda):
+            Moda = NotasDict[str(nota)]
+            NotaModa = nota
+    print(f"La nota mas frecuente (moda) fue: {NotaModa} con una frecuencia de: {Moda}")
     return
 
 
