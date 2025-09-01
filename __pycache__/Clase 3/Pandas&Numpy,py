@@ -1,0 +1,71 @@
+import requests
+import pandas as pd
+url = 'https://mindicador.cl/api/dolar'
+
+response = requests.get(url)
+print(response)
+data = response.json()
+Frameo = pd.DataFrame(data)
+print(Frameo)
+df_uf = pd.DataFrame(data["serie"])
+print(df_uf)
+print(df_uf.head())
+
+
+#########
+
+import pandas as pd
+
+excel = pd.read_excel('.\datos.xlsx')
+print(excel)
+
+########
+
+import numpy as np
+
+lista_notas = [6.5,7.0,5.8,4.9]
+array_notas = np.array(lista_notas)
+print(array_notas)  
+
+import pandas as pd
+estudiantes = [
+    {'nombre': 'Ana_1', 'notas': [4.8, 5.3, 5.2]},
+    {'nombre': 'Luis_2', 'notas': [5.6, 5.7, 6.3]},
+    {'nombre': 'Carlos_3', 'notas': [6.1, 4.5, 4.1]},
+    {'nombre': 'María_4', 'notas': [4.1, 4.4, 5.3]},
+    {'nombre': 'Pedro_5', 'notas': [6.3, 6.5, 5.1]},
+    {'nombre': 'Lucía_6', 'notas': [5.7, 5.6, 4.8]},
+    {'nombre': 'Javier_7', 'notas': [4.3, 6.8, 3.0]},
+    {'nombre': 'Sofía_8', 'notas': [4.3, 5.7, 6.5]},
+    {'nombre': 'Andrés_9', 'notas': [4.8, 6.5, 5.8]},
+    {'nombre': 'Camila_10', 'notas': [6.7, 3.6, 5.4]},
+    {'nombre': 'Diego_11', 'notas': [6.3, 4.9, 6.8]},
+    {'nombre': 'Valentina_12', 'notas': [4.8, 4.6, 6.0]},
+    {'nombre': 'José_13', 'notas': [6.6, 1.6, 6.9]},
+    {'nombre': 'Fernanda_14', 'notas': [4.6, 6.6, 5.7]},
+    {'nombre': 'Raúl_15', 'notas': [3.5, 5.0, 6.4]},
+    {'nombre': 'Martina_16', 'notas': [6.1, 4.5, 6.7]},
+    {'nombre': 'Tomás_17', 'notas': [6.6, 5.4, 5.4]},
+    {'nombre': 'Antonia_18', 'notas': [5.8, 5.8, 4.4]},
+    {'nombre': 'Felipe_19', 'notas': [5.1, 6.6, 6.4]},
+    {'nombre': 'Francisca_20', 'notas': [5.9, 4.4, 3.6]},
+    {'nombre': 'Ignacio_21', 'notas': [6.9, 5.4, 6.8]},
+    {'nombre': 'Isabel_22', 'notas': [5.0, 5.1, 6.7]},
+    {'nombre': 'Sebastián_23', 'notas': [6.1, 6.1, 4.7]},
+    {'nombre': 'Daniela_24', 'notas': [5.4, 4.0, 6.4]},
+    {'nombre': 'Cristóbal_25', 'notas': [4.6, 5.4, 5.0]},
+    {'nombre': 'Paula_26', 'notas': [6.1, 7.0, 6.9]},
+    {'nombre': 'Rodrigo_27', 'notas': [4.4, 5.4, 4.1]},
+    {'nombre': 'Catalina_28', 'notas': [6.5, 5.6, 6.1]},
+    {'nombre': 'Héctor_29', 'notas': [4.1, 1.1, 5.1]},
+    {'nombre': 'Constanza_30', 'notas': [3.7, 5.1, 4.9]},
+    {'nombre': 'Matías_31', 'notas': [5.1, 4.3, 6.6]},
+    {'nombre': 'Trinidad_32', 'notas': [4.3, 4.4, 4.7]},
+    {'nombre': 'Benjamín_33', 'notas': [5.3, 5.6, 4.2]},
+    {'nombre': 'Rocío_34', 'notas': [6.8, 6.2, 5.8]},
+    {'nombre': 'Francisco_35', 'notas': [2.1, 5.2, 3.4]},
+    {'nombre': 'Pilar_36', 'notas': [4.0, 4.2, 5.9]},
+    ]
+df_alumnos = pd.DataFrame(estudiantes)
+print(df_alumnos)
+print(f"nombres{df_alumnos["notas"]}")
