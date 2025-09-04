@@ -1,20 +1,13 @@
-#5. Entrega un listado ordenado (de mayor a menor) de los estudiantes promedio.
+import pandas as pd
+import numpy as np
+from DatosEstudiantes import estudiantes
 
-import DatosEstudiantes
+# Convertir a DataFrame
+df = pd.DataFrame(estudiantes)
+df['promedio'] = df['notas'].apply(np.mean)
 
-def main():
-    estudiantado = DatosEstudiantes.estudiantes
-    for estudiante in estudiantado:
-        promedio = DatosEstudiantes.promedio(estudiante["notas"])
-        estudiante["promedio"] = promedio
-    OrdenarEstudiantes(estudiantado)
-    return
+# Entrega un listado ordenado (de mayor a menor) de los estudiantes según su promedio.
+ordenados = df.sort_values(by='promedio', ascending=False)
 
-def OrdenarEstudiantes(estudiantado):
-    EstudiantesOrdenado = sorted(estudiantado,key=lambda x: x["promedio"],reverse=True)
-    print(f"Estudiantes ordenados:")
-    for estudiante in EstudiantesOrdenado:
-        print(f"Nombre : {(estudiante["nombre"]):<12} promedio: {estudiante["promedio"]} ")
-    return
-main()
-
+print("Listado ordenado por promedio:")
+print(ordenados[['nombre','promedio']])
