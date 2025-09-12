@@ -2,12 +2,16 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plot
 import seaborn 
+import os
+print(os.getcwd())
+
 #  1. Lectura de datos
 #     -------------------
 #     - Carga el archivo pokemon_primera_gen.csv en un DataFrame de Pandas.
 
 def main():
-    file = 'F:/Git/Tarea_Principios_Data_Science/Tarea pokemon/pokemon_primera_gen.csv'
+    scriptDir = os.path.dirname(os.path.abspath(__file__))
+    file = os.path.join(scriptDir, "pokemon_primera_gen.csv")
     csv = pd.read_csv(file)
     df = pd.DataFrame(csv)
     print(df)
